@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Environmental Sustainability Dashboard</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="dashboard">
+    <h1>Environmental Sustainability Dashboard By Info visionaries</h1>
+    <div class="controls">
+      <label for="date-range">Select Date Range:</label>
+      <input type="range" id="date-range" min="2016" max="2023" step="1" value="2020" onchange="updateDashboard(this.value)">
+      <span id="current-date"></span>
+      <select id="indicator" onchange="updateDashboard(document.getElementById('date-range').value)">
+        <option value="climate_change">Climate Change</option>
+        <option value="pollution">Pollution</option>
+        <option value="degradation">Degradation</option>
+        <option value="resource_depletion">Resource Depletion</option>
+      </select>
+    </div>
+    <div class="charts">
+      <canvas id="bar-chart"></canvas>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
